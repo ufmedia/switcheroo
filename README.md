@@ -12,6 +12,8 @@ Features are defined in the `switcheroo.json` file located in the root of your p
 - **Description**: Explains the feature's purpose.
 - **Status**: Indicates whether the feature is active, experimental, deprecated, etc.
 
+You can find an example of this file in the root directory of this plugin. Copy this to the root directory of your WordPress project to get started.
+
 You can toggle each feature within the Switcheroo Settings in the WP Admin (Settings->Switcheroo).
 
 ## Usage

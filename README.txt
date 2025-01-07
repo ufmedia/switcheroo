@@ -56,7 +56,7 @@ Examples:
 
 1. Upload the `switcheroo` folder to the `/wp-content/plugins/` directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Configure feature flags in the `switcheroo.json` file located in your project root. (You might need to create this file)
+3. Configure feature flags in the `switcheroo.json` file located in your project root. You can find an example of this file in the root directory of this plugin.
 4. Use the settings screen under `Settings -> Switcheroo` to toggle features.
 
 == Frequently Asked Questions ==
