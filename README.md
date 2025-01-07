@@ -1,3 +1,5 @@
+![Switcheroo logo](assets/icon-256x256.png)
+
 # Feature Flags with Switcheroo
 
 ## Overview
