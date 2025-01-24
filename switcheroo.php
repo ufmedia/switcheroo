@@ -15,7 +15,7 @@
  * Plugin Name:       Switcheroo
  * Plugin URI:        https://ufmedia.co.uk
  * Description:       Switcheroo makes managing feature flags in WordPress easy, fun, and powerful. Whether you’re running a single-site or a multisite network, Switcheroo lets you toggle features on and off effortlessly, enabling you to test new functionality, control feature rollouts, and safely experiment without breaking your site.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            John Thompson
  * Author URI:        https://ufmedia.co.uk/
  * License:           GPL-2.0+
