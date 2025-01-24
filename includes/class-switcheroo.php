@@ -66,15 +66,14 @@ class Switcheroo {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'SWITCHAROO_VERSION' ) ) {
-			$this->version = SWITCHAROO_VERSION;
+		if ( defined( 'SWITCHEROO_VERSION' ) ) {
+			$this->version = SWITCHEROO_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
 		$this->plugin_name = 'switcheroo';
 
 		$this->load_dependencies();
-		$this->set_locale();
 		$this->define_admin_hooks();
 	}
 
@@ -103,12 +102,6 @@ class Switcheroo {
 		require_once plugin_dir_path( __DIR__ ) . 'includes/class-switcheroo-loader.php';
 
 		/**
-		 * The class responsible for defining internationalization functionality
-		 * of the plugin.
-		 */
-		require_once plugin_dir_path( __DIR__ ) . 'includes/class-switcheroo-i18n.php';
-
-		/**
 		 * The class responsible for parsing the switcheroo.json file.
 		 */
 		require_once plugin_dir_path( __DIR__ ) . 'includes/class-switcheroo-json.php';
@@ -127,22 +120,6 @@ class Switcheroo {
 	}
 
 	/**
-	 * Define the locale for this plugin for internationalization.
-	 *
-	 * Uses the Switcheroo_i18n class in order to set the domain and to register the hook
-	 * with WordPress.
-	 *
-	 * @since    1.0.0
-	 * @access   private
-	 */
-	private function set_locale() {
-
-		$plugin_i18n = new Switcheroo_i18n();
-
-		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
-	}
-
-	/**
 	 * Register all of the hooks related to the admin area functionality
 	 * of the plugin.
 	 *
@@ -151,9 +128,9 @@ class Switcheroo {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_json     = new Switcheroo_Json();
-		$plugin_cli      = new Switcheroo_Cli( $plugin_json );
-		$plugin_admin    = new Switcheroo_Admin( $this->get_plugin_name(), $this->get_version(), $plugin_json );
+		$plugin_json  = new Switcheroo_Json();
+		$plugin_cli   = new Switcheroo_Cli( $plugin_json );
+		$plugin_admin = new Switcheroo_Admin( $this->get_plugin_name(), $this->get_version(), $plugin_json );
 
 		// Admin specific hooks.
 		if ( is_multisite() ) {
@@ -161,7 +138,6 @@ class Switcheroo {
 		} else {
 			$this->loader->add_action( 'admin_menu', $plugin_admin, 'switcheroo_admin_menu' );
 		}
-
 	}
 
 
@@ -218,6 +194,6 @@ class Switcheroo {
 		} else {
 			$flags = get_option( 'switcheroo_flags', array() );
 		}
-		return ! empty( $flags[ $feature_id ] ) && $flags[ $feature_id ] === 1;
+		return ! empty( $flags[ $feature_id ] ) && 1 === $flags[ $feature_id ];
 	}
 }

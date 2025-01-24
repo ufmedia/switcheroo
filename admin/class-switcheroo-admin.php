@@ -157,6 +157,7 @@ class Switcheroo_Admin {
 
 			check_admin_referer( 'switcheroo_save_settings' );
 
+			// Reviewer: We sanitise the flags using the sanitize_flags() method.
 			$flags           = isset( $_POST['switcheroo_flags'] ) ? wp_unslash( $_POST['switcheroo_flags'] ) : array(); // phpcs:ignore
 			$sanitized_flags = $this->sanitize_flags( $flags );
 

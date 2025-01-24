@@ -28,6 +28,7 @@ class Switcheroo_Json {
 	 * Sets the file path for the switcheroo.json file.
 	 */
 	public function __construct() {
+		// FAO Reviewer: Here we're deliberately using ABSPATH as the JSON file is expected to be in the root of the WordPress installation.
 		$this->file_path = ABSPATH . 'switcheroo.json';
 	}
 

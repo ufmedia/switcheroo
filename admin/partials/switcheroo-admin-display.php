@@ -11,6 +11,10 @@
  * @subpackage Switcheroo/admin/partials
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
 $features = $this->switcheroo_json->parse_json();
 
 if ( null === $features ) {

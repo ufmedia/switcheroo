@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The plugin bootstrap file
  *
@@ -41,22 +40,22 @@ define( 'SWITCHAROO_VERSION', '1.0.0' );
  * The code that runs during plugin activation.
  * This action is documented in includes/class-switcheroo-activator.php
  */
-function activate_switcheroo() {
+function switcheroo_activate() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-switcheroo-activator.php';
-	Switcheroo_Activator::activate();
+	Switcheroo_Activator::switcheroo_activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-switcheroo-deactivator.php
  */
-function deactivate_switcheroo() {
+function switcheroo_deactivate() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-switcheroo-deactivator.php';
-	Switcheroo_Deactivator::deactivate();
+	Switcheroo_Deactivator::switcheroo_deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_switcheroo' );
-register_deactivation_hook( __FILE__, 'deactivate_switcheroo' );
+register_activation_hook( __FILE__, 'switcheroo_activate' );
+register_deactivation_hook( __FILE__, 'switcheroo_deactivate' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -73,12 +72,12 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-switcheroo.php';
  *
  * @since    1.0.0
  */
-function run_switcheroo() {
+function switcheroo_run() {
 
 	$plugin = new Switcheroo();
 	$plugin->run();
 }
-run_switcheroo();
+switcheroo_run();
 
 if ( ! function_exists( 'switcheroo_flag_status' ) ) {
 	/**

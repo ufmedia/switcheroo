@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Fired during plugin activation
  *
@@ -29,6 +28,6 @@ class Switcheroo_Activator {
 	 *
 	 * @since    1.0.0
 	 */
-	public static function activate() {
+	public static function switcheroo_activate() {
 	}
 }
